@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="jquery.min.js"></script>
+	<link href="base.css" rel="stylesheet" type="text/css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-slide">
+			<div class="self-intro-container">
+				<div class="self-intro">
+					<p class="name">
+						Hello, my name is Real
+					</p>
+					<p class="desc">I'm loving living every single day</p>
+					<p class="intro">I'm a front-end engineer</p>
+					<p class="github">zhusijia@github.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$(".self-intro").on("mousemove", function(e){
+				x = e.offsetX;
+				y = e.offsetY;
+				console.log(x,y)
+			})
+		})
+	</script>
+</body>
+</html>
