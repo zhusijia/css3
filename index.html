@@ -13,12 +13,14 @@
 		<div class="swiper-slide">
 			<div class="self-intro-container">
 				<div class="self-intro">
-					<p class="name">
-						Hello, my name is Real
-					</p>
-					<p class="desc">I'm loving living every single day</p>
-					<p class="intro">I'm a front-end engineer</p>
-					<p class="github">zhusijia@github.com</p>
+					<div class="bolck">
+						<p class="name">
+							Hello, my name is Real
+						</p>
+						<p class="desc">I'm loving living every single day</p>
+						<p class="intro">I'm a front-end engineer</p>
+						<p class="github">zhusijia@github.com</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -26,9 +28,29 @@
 	<script>
 		$(function(){
 			$(".self-intro").on("mousemove", function(e){
-				x = e.offsetX;
-				y = e.offsetY;
-				console.log(x,y)
+				var position_x = $(this).position().left;
+				var position_y = $(this).position().top;
+				
+				var clien_x = e.clientX;
+				var clien_y = e.clientY;
+
+				var c_width = $(this).width() / 2;
+				var c_height = $(this).height() / 2;
+
+				var offset_x = Math.abs(clien_x - position_x);
+				var offset_y = Math.abs(clien_y - position_y);
+
+				var rotate_x =  (offset_x - c_width) * (6 / c_width)
+				var rotate_y =  (offset_y - c_height) * (16 / c_height)
+
+				$(this).css({
+					"transform": "translate("+rotate_x+"px,"+rotate_y+"px) scale(1.03) rotateX("+rotate_x+"deg) rotateY("+rotate_y+"deg)"
+				})
+			})
+			$(".self-intro").on("mouseleave", function(e){
+				$(this).css({
+					"transform": "translate(0px, 0px) scale(1) rotateX(0deg) rotateY(0deg)"
+				})
 			})
 		})
 	</script>

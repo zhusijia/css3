@@ -74,6 +74,3 @@ html {
   box-shadow: 0 0 70px #111;
   transform: scale(1.03);
 }
-.swiper-container .swiper-slide .self-intro-container .self-intro:hover p {
-  text-shadow: 2px 1px 2px #707070;
-}
