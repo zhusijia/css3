@@ -47,6 +47,9 @@ html {
   border-radius: 15px;
   transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+.swiper-container .swiper-slide .self-intro-container .self-intro:hover {
+  box-shadow: 0 0 70px #111;
+}
 .swiper-container .swiper-slide .self-intro-container .self-intro .name {
   margin: 26px 0 0;
   font-family: myFirstFont;
@@ -69,8 +72,4 @@ html {
   font-size: 28px;
   color: #7d2704;
   font-family: cursive;
-}
-.swiper-container .swiper-slide .self-intro-container .self-intro:hover {
-  box-shadow: 0 0 70px #111;
-  transform: scale(1.03);
 }

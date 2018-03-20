@@ -43,8 +43,12 @@ html {
                 width: 700px;
                 height: 280px;
                 text-align: center;
-                border-radius: 15px;
-				transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+				border-radius: 15px;
+				will-change: transform;
+                transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+                &:hover {
+                    box-shadow: 0 0 70px #111;
+                }
                 .name {
                     margin: 26px 0 0;
                     font-family: myFirstFont;
@@ -67,13 +71,6 @@ html {
                     font-size: 28px;
                     color: #7d2704;
                     font-family: cursive;
-                }
-                &:hover {
-                    box-shadow: 0 0 70px #111;
-                    transform: scale(1.03);
-                    // p {
-                    //     text-shadow: 2px 1px 2px #707070;
-                    // }
                 }
             }
         }
