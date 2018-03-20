@@ -14,11 +14,30 @@ html {
 .swiper-container {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     .swiper-slide {
         width: 100%;
         height: 100vh;
-        background-image: url("./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
         background-size: cover;
+        position: relative;
+        &.Z-self {
+            background-image: url("./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
+        }
+        &.Z-about {
+            background-image: url("./img/CheetahMom_ZH-CN9990146737_1920x1080.jpg");
+        }
+        &.Z-skill {
+            background-image: url("./img/ZellerHorn_ZH-CN7123868469_1920x1080.jpg");
+        }
+        &.Z-job {
+            background-image: url("./img/WardCharcoalOvens_ZH-CN15946806125_1920x1080.jpg");
+        }
+        &.Z-work {
+            background-image: url("./img/TingSakura_ZH-CN14945610051_1920x1080.jpg");
+        }
+        &.Z-furture {
+            background-image: url("./img/SwitzerlandSunset_ZH-CN8198492507_1920x1080.jpg");
+        }
         &:before {
             content: ' ';
             display: block;
@@ -44,7 +63,8 @@ html {
                 height: 280px;
                 text-align: center;
 				border-radius: 15px;
-				will-change: transform;
+                will-change: transform;
+                z-index: 10;
                 transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
                 &:hover {
                     box-shadow: 0 0 70px #111;

@@ -5,22 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="jquery.min.js"></script>
+	<script src="mousewhell.js"></script>
 	<link href="base.css" rel="stylesheet" type="text/css">
 	<title>Document</title>
 </head>
 <body>
 	<div class="swiper-container">
-		<div class="swiper-slide">
-			<div class="self-intro-container">
-				<div class="self-intro">
-					<p class="name">
-						Hello, my name is Real
-					</p>
-					<p class="desc">I'm loving living every single day</p>
-					<p class="intro">I'm a front-end engineer</p>
-					<p class="github">zhusijia@github.com</p>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide Z-self">
+				<div class="self-intro-container">
+					<div class="self-intro">
+						<p class="name">
+							Hello, my name is Real
+						</p>
+						<p class="desc">I'm loving living every single day</p>
+						<p class="intro">I'm a front-end engineer</p>
+						<p class="github">zhusijia@github.com</p>
+					</div>
 				</div>
 			</div>
+			<div class="swiper-slide Z-about"></div>
+			<div class="swiper-slide Z-skill"></div>
+			<div class="swiper-slide Z-job"></div>
+			<div class="swiper-slide Z-work"></div>
+			<div class="swiper-slide Z-furture"></div>
 		</div>
 	</div>
 	<script>
@@ -49,9 +57,28 @@
 					})
 				}
 			})
+
 			$(".self-intro").on("mouseleave", function(e){
 				$(this).css({
 					"transform": "translate(0px, 0px) scale(1) rotateX(0deg) rotateY(0deg)"
+				})
+			})
+			
+			$(".swiper-slide").on("mousewheel", function(e){
+				var index = $(this).index();
+				var length = $(".swiper-slide").length;
+				$(this).addClass("swiper-slide-prev");
+				$(this).next().addClass("swiper-slide-current");
+				$(".swiper-slide-current")
+				if (e.deltaY < 0) {
+					index < length-1 ? index = index + 1 : index;
+				} else {
+					index > 0 ? index = index - 1 : index;
+				}
+				translate_y = -100 * index;
+				$(".swiper-wrapper").css({
+					"transform": "translateY("+translate_y+"vh)",
+					"transition-duration": "1s"
 				})
 			})
 		})
