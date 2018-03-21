@@ -13,6 +13,10 @@
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide Z-self">
+				<div class="bg-box">
+					<div class="bg-transform"></div>
+					<div class='bg-hide'></div>
+				</div>
 				<div class="self-intro-container">
 					<div class="self-intro">
 						<p class="name">
@@ -81,6 +85,10 @@
 					"transition-duration": "1s"
 				})
 			})
+			
+			setTimeout(function(){
+				$(".bg-box").css({"animation-name": "out-left"})
+			}, 1000);
 		})
 	</script>
 </body>
