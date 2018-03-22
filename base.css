@@ -17,6 +17,14 @@ html {
     transform: rotate3d(0, 1, 0, 90deg);
   }
 }
+@keyframes in-left {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, -90deg);
+  }
+}
 .swiper-container {
   width: 100%;
   height: 100vh;
@@ -53,8 +61,8 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  transform-origin: right center;
-  transform: translate3d(-100%, 0, 0) rotateY(-90deg);
+  transform-origin: left center;
+  transform: translate3d(100%, 0, 0) rotateY(90deg);
   background-image: url("img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg");
 }
 .swiper-container .swiper-slide.Z-about {
