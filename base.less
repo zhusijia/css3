@@ -32,33 +32,46 @@ html {
         background-size: cover;
         position: relative;
         &.Z-self {
-            perspective: 500px;
-            .bg-box {
+            .wutai {
+                perspective: 500px;
+                position: absolute;
+                top: 0;left: 0;
+                right: 0;
+                bottom: 0;
+                .bg-box {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    transform-style: preserve-3d;
+                    transform-origin: 50% 50% -960px;
+                    animation: 2s ease-out 0ms 1 normal forwards;
+                    .bg-transform {
+                        width: 100%;
+                        height: 100%;
+                        // background-image: url("./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
+                    }
+                    .bg-hide {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        // transform-origin: right center;
+                        // transform: translate3d(-100%,0,0) rotateY(-90deg);
+                        transform-origin: left center;
+                        transform: translate3d(100%, 0, 0) rotateY(90deg);
+                        // background-image: url("./img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg");
+                    }
+                }
+            }
+            .bg-switch {
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
                 position: absolute;
-                transform-style: preserve-3d;
-                transform-origin: 50% 50% -960px;
-                animation: 2s ease-out 0ms 1 normal forwards;
-                .bg-transform {
-                    width: 100%;
-                    height: 100%;
-                    background-image: url("./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
-                }
-                .bg-hide {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    // transform-origin: right center;
-                    // transform: translate3d(-100%,0,0) rotateY(-90deg);
-                    transform-origin: left center;
-                    transform: translate3d(100%, 0, 0) rotateY(90deg);
-                    background-image: url("./img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg");
-                }
             }
         }
         &.Z-about {

@@ -37,10 +37,15 @@ html {
   background-size: cover;
   position: relative;
 }
-.swiper-container .swiper-slide.Z-self {
+.swiper-container .swiper-slide.Z-self .wutai {
   perspective: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-.swiper-container .swiper-slide.Z-self .bg-box {
+.swiper-container .swiper-slide.Z-self .wutai .bg-box {
   top: 0;
   right: 0;
   bottom: 0;
@@ -50,12 +55,11 @@ html {
   transform-origin: 50% 50% -960px;
   animation: 2s ease-out 0ms 1 normal forwards;
 }
-.swiper-container .swiper-slide.Z-self .bg-box .bg-transform {
+.swiper-container .swiper-slide.Z-self .wutai .bg-box .bg-transform {
   width: 100%;
   height: 100%;
-  background-image: url("img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
 }
-.swiper-container .swiper-slide.Z-self .bg-box .bg-hide {
+.swiper-container .swiper-slide.Z-self .wutai .bg-box .bg-hide {
   position: absolute;
   top: 0;
   right: 0;
@@ -63,7 +67,13 @@ html {
   left: 0;
   transform-origin: left center;
   transform: translate3d(100%, 0, 0) rotateY(90deg);
-  background-image: url("img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg");
+}
+.swiper-container .swiper-slide.Z-self .bg-switch {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
 }
 .swiper-container .swiper-slide.Z-about {
   background-image: url("img/CheetahMom_ZH-CN9990146737_1920x1080.jpg");
