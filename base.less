@@ -21,58 +21,78 @@ html {
     to    {transform: rotate3d(0,1,0,-90deg)}
 }
 
+
+
 .swiper-container {
     width: 100%;
     height: 100vh;
     overflow: hidden;
     background: #ffe2e2;
+    .bg-animation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        .wutai {
+            perspective: 500px;
+            position: absolute;
+            top: 0;left: 0;
+            right: 0;
+            bottom: 0;
+            .bg-box {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                transform-style: preserve-3d;
+                transform-origin: 50% 50% -960px;
+                animation: 2s ease-out 0ms 1 normal forwards;
+                .bg-transform {
+                    width: 100%;
+                    height: 100%;
+                }
+                .bg-hide {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    // transform-origin: right center;
+                    // transform: translate3d(-100%,0,0) rotateY(-90deg);
+                    transform-origin: left center;
+                    transform: translate3d(100%, 0, 0) rotateY(90deg);
+                }
+            }
+        }
+        .bg-switch {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+        }
+        .bg-butter {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            .bg-complete {
+                width: 100%;
+                height: 100%;
+                background: url(./img/gongdian.jpg)
+            }
+        }
+    }
     .swiper-slide {
         width: 100%;
         height: 100vh;
         background-size: cover;
         position: relative;
         &.Z-self {
-            .wutai {
-                perspective: 500px;
-                position: absolute;
-                top: 0;left: 0;
-                right: 0;
-                bottom: 0;
-                .bg-box {
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    position: absolute;
-                    transform-style: preserve-3d;
-                    transform-origin: 50% 50% -960px;
-                    animation: 2s ease-out 0ms 1 normal forwards;
-                    .bg-transform {
-                        width: 100%;
-                        height: 100%;
-                        // background-image: url("./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg");
-                    }
-                    .bg-hide {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        // transform-origin: right center;
-                        // transform: translate3d(-100%,0,0) rotateY(-90deg);
-                        transform-origin: left center;
-                        transform: translate3d(100%, 0, 0) rotateY(90deg);
-                        // background-image: url("./img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg");
-                    }
-                }
-            }
-            .bg-switch {
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                position: absolute;
-            }
+            background: transparent;
         }
         &.Z-about {
             background-image: url("./img/CheetahMom_ZH-CN9990146737_1920x1080.jpg");
@@ -111,6 +131,7 @@ html {
             align-items: center;
             z-index: 3;
             .self-intro {
+                position: absolute;
                 width: 700px;
                 height: 280px;
                 text-align: center;

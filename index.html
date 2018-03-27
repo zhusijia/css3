@@ -11,23 +11,30 @@
 </head>
 <body>
 	<div class="swiper-container">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide Z-self">
-				<div class="wutai" style="perspective: 500px;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
-					<div class="bg-box">
-						<div class="bg-transform">
-							<img src="./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg" width="100%" height="100%">
-						</div>
-						<div class='bg-hide'>
-								<img src="./img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg" width="100%" height="100%">
-						</div>
+		<div class="bg-animation">
+			<div class="wutai" style="perspective: 500px;position: absolute;top: 0;left: 0;right: 0;bottom: 0;display: none">
+				<div class="bg-box">
+					<div class="bg-transform">
+						<img src="./img/AidlingerHoehe_ZH-CN11764360351_1920x1080 (1).jpg" width="100%" height="100%">
+					</div>
+					<div class='bg-hide'>
+							<img src="./img/ColorfulTromso_ZH-CN9894938772_1920x1080.jpg" width="100%" height="100%">
 					</div>
 				</div>
-				<div class="bg-switch">
-					<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 0%;"></div>
-					<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 33.333%;"></div>
-					<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 66.666%;"></div>
+			</div>
+			<div class="bg-switch" style="display: none">
+				<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 0%;"></div>
+				<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 33.333%;"></div>
+				<div style="position: absolute; height: 100%; width: 33.333%; border: none; margin: 0px; overflow: hidden; top: 0px; left: 66.666%;"></div>
+			</div>
+			<div class="bg-butter">
+				<div class="bg-complete">
+
 				</div>
+			</div>
+		</div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide Z-self">
 				<div class="self-intro-container">
 					<div class="self-intro">
 						<p class="name">
@@ -47,6 +54,30 @@
 		</div>
 	</div>
 	<script>
+		$(function(){
+			var columns = 3;
+			var rows = 12;
+			var complete = $(".bg-complete");
+			var width = complete.width() / rows;
+			var height = complete.height() / columns;
+			for (var i = 0; i < columns; i++) {
+				var position_y = height * i; 
+				for(var j = 0; j < rows; j++) {
+					var position_x = width * j;
+					$("<div>").width(width).height(height).css({
+						"float": "left",
+						"background": "url(./img/gongdian.jpg)",
+						"box-sizing": "border-box",
+						"position": "absolute",
+						"left": position_x,
+						"top": position_y,
+						"border": "1px solid #fff",
+						"background-position": -position_x + "px -" + position_y + "px"
+					}).appendTo(complete)
+				}
+			}
+		})
+
 		$(function(){
 			$(".self-intro" ).on("mousemove", function(e){
 				var position_x = $(this).position().left;
@@ -91,7 +122,7 @@
 					index > 0 ? index = index - 1 : index;
 				}
 				translate_y = -100 * index;
-				$(".swiper-wrapper").css({
+				$(".swiper-wrapper, .bg-animation").css({
 					"transform": "translateY("+translate_y+"vh)",
 					"transition-duration": "1s"
 				})
